@@ -1,0 +1,62 @@
+<%- include('header.ejs') %>
+<link rel='stylesheet' href='public/css/register.css'>
+    <div class="container">
+        <form action="/update-user" method="POST">
+        <div class="container">
+            <h3 class="display-5 title text-center"><a style="font-weight: bold;"><%-user.username%></a>'s profile</h3>
+            <p class="subtitle text-center">¡Hola buenos días!</p>
+            <hr>
+            
+                <p class="text-center">Aquí puedes cambiar los datos de tu cuenta.</p>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" value="<%-user.email%>" readonly>
+                <label for="username">Username</label>
+                <input name="username" type="text" maxlength="12" value="<%-user.username%>">
+                <hr>
+                <label for="password">New password</label>
+                <input name="password" maxlength="18" type="password">
+                <label for="password_repeat">Repeat new password</label>
+                <input name="password_repeat" maxlength="18" type="password">
+                <button type="submit" class="registerbtn">Update</button>
+        </div>
+        </form>
+        <br>
+        <div class="pricing-box-container">
+	<div class="pricing-box text-center">
+		<h5 class="black">Newbie</h5>
+		<p class="price black"><sup>$</sup>0<sub>/mo</sub></p>
+		<ul class="features-list black">
+			<li><strong>1</strong> Project</li>
+			<li><strong>5</strong> Team Members</li>
+			<li><strong>50</strong> Personal Projects</li>
+			<li><strong>5,000</strong> Messages</li>
+		</ul>
+		<button class="btn-primary">Get Started</button>
+	</div>
+
+	<div class="pricing-box pricing-box-bg-image text-center">
+		<h5>Premium</h5>
+		<p class="price"><sup>$</sup>39<sub>/mo</sub></p>
+		<ul class="features-list">
+			<li><strong>5</strong> Project</li>
+			<li><strong>20</strong> Team Members</li>
+			<li><strong>100</strong> Personal Projects</li>
+			<li><strong>15,000</strong> Messages</li>
+		</ul>
+		<button class="btn-primary white">Get Started</button>
+	</div>
+
+	<div class="pricing-box text-center">
+		<h5 class="black">Platinum</h5>
+		<p class="price black"><sup>$</sup>89<sub>/mo</sub></p>
+		<ul class="features-list black">
+			<li><strong>25</strong> Project</li>
+			<li><strong>50</strong> Team Members</li>
+			<li><strong>500</strong> Personal Projects</li>
+			<li><strong>50,000</strong> Messages</li>
+		</ul>
+		<button class="btn-primary">Get Started</button>
+	</div>
+</div>
+    </div>
+<%- include('footer.ejs') %>

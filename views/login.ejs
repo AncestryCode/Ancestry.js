@@ -1,0 +1,32 @@
+<%- include('header.ejs') %>
+<% if(typeof alert !== 'undefined') { %>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <%-alert%>
+  </div>
+<% } %>
+<div class="heading text-center">
+    <h1 class="display-5 title">Ingresar</h1>
+    <p class="subtitle">Inicia sesión para poder usar la aplicación con todo su potencial.</p>
+    <form action="/login" method="post" name="login" onsubmit="return validate()">
+        <div class="container">
+          <p id="message"></p>
+          <label for="email"><b>Email</b></label>
+          <input type="text" id="email" value="<%-email%>" placeholder="Enter email" name="email" required>
+          <label for="password"><b>Password</b></label>
+          <input type="password" id="password" placeholder="Enter password" name="password" required>
+          
+          <button type="submit" id="submit_b">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <!-- <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="/forgot">password?</a></span> -->
+        </div>
+      </form>
+</div>
+<script src="public/js/login.js" type="text/javascript"></script>
+<%- include('footer.ejs') %>

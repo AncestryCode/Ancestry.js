@@ -1,0 +1,49 @@
+{
+  "name": "AncestryApp",
+  "version": "1.0.0",
+  "description": "Ancestry checker application in NodeJS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+	"pack:osx": "electron-packager . $npm_package_productName --out=dist/osx --platform=darwin --arch=x64 --icon=assets/build/osx/icon.icns && npm run codesign",
+	"pack:win32": "electron-packager . $npm_package_productName --out=dist/win --platform=win32 --arch=ia32",
+	"pack:win64": "electron-packager . $npm_package_productName --out=dist/win --platform=win32 --arch=x64 --version=0.36.2 app-version=1.0 --icon=assets/images/favicon.ico",
+	"build": "npm run pack:osx && npm run pack:win32 && npm run pack:win64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iAtog/Ancestry.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autils.js": "^0.2.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "check-internet-connected": "^2.0.5",
+    "cookie-parser": "^1.4.5",
+    "cookies": "^0.8.0",
+    "discord-rpc": "^3.1.4",
+    "discord.js": "^12.4.1",
+    "ejs": "^3.1.5",
+    "ejs-electron": "^2.1.1",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.3",
+    "express-sanitizer": "^1.0.5",
+    "inquirer": "^7.3.3",
+    "js-base64": "^3.6.0",
+    "method-override": "^3.0.0",
+    "opn": "^6.0.0",
+    "request": "^2.88.2",
+    "sqlite3": "^5.0.0",
+    "yargs": "^16.1.1"
+  },
+  "bin": {
+    "ancestry": "./index.js"
+  },
+  "devDependencies": {
+    "electron": "^11.1.1"
+  }
+}

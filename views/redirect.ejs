@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<span id="counter" style="visibility: hidden;">5</span>
+<html lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Redirecting...</title>
+        <link rel="icon" type="image/png" href="https://i.ya-webdesign.com/images/discord-png-logo-6.png">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='public/css/style.css'>
+        <link rel='stylesheet' href='public/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='public/css/stars.css'>
+        <link rel='stylesheet' href='public/css/fontawesome.css'>
+        <link rel='stylesheet' href='public/css/now-ui-kit.css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <br><br><br><br><br><br>
+        <div class="heading text-center">
+            <h4 class="display-5 title"><%-message%></h1>
+                <p>You will be redirected in 5 second(s).</p>
+        </div>
+        <br><br><br><br><br><br>
+    </body>
+</html>
+<script type="text/javascript">
+    function countdown() {
+        var i = document.getElementById('counter');
+        if (parseInt(i.innerHTML) <= 0) {
+            location.href = '/';
+        }
+        if (parseInt(i.innerHTML) != 0) {
+            i.innerHTML = (parseInt(i.innerHTML) - 1) + "";
+        }
+    }
+    setInterval(function () {
+        countdown();
+    }, 1000);
+</script>

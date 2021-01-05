@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ancestry Application | <%-title%></title>
+    <link rel="icon" type="image/png" href="https://i.ya-webdesign.com/images/discord-png-logo-6.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='public/css/style.css'>
+    <link rel='stylesheet' href='public/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='public/css/stars.css'>
+    <link rel='stylesheet' href='public/css/fontawesome.css'>
+	<link rel='stylesheet' href='public/css/now-ui-kit.css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="background-color:#23272A;">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/premium">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/checker">Checker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/discord">Support</a>
+                    </li>
+                    
+                </ul>
+                    <% if(user !== null) { %>
+                        <div class="user block-cursor">
+                            <!-- <img src="public/images/background.png" style="vertical-align: middle;width: 5%;height: auto;"> -->
+                            <a href="/user-interface"style="font-weight: bold;"><%-user.username%></a>
+                            <a href="/logout" style="font-weight: bold;">Logout</a>
+                        </div>
+                    <% } else { %>
+                        <a class="nav-link" href="/register">Register</a>
+                        <a class="nav-link" href="/login">Login</a>
+                    <% } %>
+            </div>
+        </nav>
+		<% if(typeof nfe !== 'undefined') { %>
+			<div class="alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			  Esa página/apartado no ha sido encontrada.
+			</div>
+        <% } %>
+        <% if(typeof message !== 'undefined') { %>
+            <div class="message_redirect">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%-message%>
+            </div>
+        <% } %>
